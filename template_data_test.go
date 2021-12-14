@@ -35,10 +35,10 @@ func TestTemplateDataMap(t *testing.T) {
 type Page struct {
 	Title   string
 	Name    string
-	Address Addess
+	Address Address
 }
 
-type Addess struct {
+type Address struct {
 	Street string
 }
 
