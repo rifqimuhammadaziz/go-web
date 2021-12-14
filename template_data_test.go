@@ -49,7 +49,7 @@ func TemplateDataStruct(rw http.ResponseWriter, r *http.Request) {
 	t.ExecuteTemplate(rw, "name.gohtml", Page{
 		Title: "Testing Template Data Map",
 		Name:  "Xenosty",
-		Address: Addess{ // nested struct
+		Address: Address{ // nested struct
 			Street: "Central Java, Indonesia",
 		},
 	})
