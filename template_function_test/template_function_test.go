@@ -86,6 +86,7 @@ func TemplateFunctionGlobalCreatePipeline(rw http.ResponseWriter, r *http.Reques
 
 	// create template function
 	t = t.Funcs(map[string]interface{}{
+		// functionName: sayHello | sayHello(name string)
 		"sayHello": func(name string) string {
 			return "Hello " + name
 		},
@@ -95,7 +96,7 @@ func TemplateFunctionGlobalCreatePipeline(rw http.ResponseWriter, r *http.Reques
 		},
 	})
 
-	// execute template function upper(Name)
+	// execute sayHello, then the result throw to upper parameter
 	t = template.Must(t.Parse(`{{ sayHello .Name  | upper }}`))
 
 	t.ExecuteTemplate(rw, "GlobalFunction", MyPage{
