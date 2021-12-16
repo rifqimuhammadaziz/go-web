@@ -3,7 +3,6 @@ package goweb
 import (
 	"bytes"
 	"embed"
-	_ "embed"
 	"fmt"
 	"html/template"
 	"io"
@@ -78,7 +77,7 @@ func TestUploadFile(t *testing.T) {
 
 	writer := multipart.NewWriter(body)
 	writer.WriteField("name", "Rifqi Muhammad Aziz")
-	file, _ := writer.CreateFormFile("file", "TestUpload.jpg")
+	file, _ := writer.CreateFormFile("file", "TestUpload2.jpg")
 	file.Write(uploadFileTest)
 	writer.Close()
 
